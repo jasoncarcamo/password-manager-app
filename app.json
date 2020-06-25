@@ -1,18 +1,18 @@
 {
   "expo": {
-    "name": "ReactNativeTemplate",
-    "slug": "ReactNativeTemplate",
+    "name": "PasswordManager",
+    "slug": "PasswordManager",
     "platforms": [
       "ios",
       "android",
       "web"
     ],
     "version": "1.0.0",
-    "orientation": "portrait",
+    "orientation": "default",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
     "splash": {
-      "image": "./assets/images/splash.png",
+      "image": "./assets/images/icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
