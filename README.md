@@ -1,16 +1,20 @@
 # Password manager mobile app
 
-#### Live site https://password-manager.jasoncarcamo30.now.sh/
+#### Online emulator 
+https://snack.expo.io/@git/github.com/jasoncarcamo/password-manager-app/
+
+#### Api Gthub repo
+https://github.com/jasoncarcamo/password-manager-api/
 
 ## Description
-Full stack cleaning service company.
+Full stack password protector and reminder application. For android and coming soon for IOS
 
 ![Password manager mobile app](/github_images/password1.png)<br/>
 ![Password manager mobile app](/github_images/password2.png)<br/>
 ![Password manager mobile app](/github_images/password3.png)<br/>
 
 ## Features
-Users get a feel of the company and can quickly request a quote with whatever the client has in mind. The admin recieves email confirmations when a user requests a quote or fills out the contact form. Admin also recieves push notifications on the mobile app version, see react native projects section.
+Password manager mobile app allows users to save, edit, and delete passwords. Password are hashed, salted and protected from xss attacks. Features include saving, editing, and delete passwords. Sign up included.
 
 ## Built with
 - React.js
