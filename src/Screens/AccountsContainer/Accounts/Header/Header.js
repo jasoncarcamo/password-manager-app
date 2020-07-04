@@ -1,5 +1,5 @@
 import React from "react";
-import {TouchableOpacity, View, Text, StyleSheet} from "react-native";
+import {TouchableOpacity, View, Text, StyleSheet, Dimensions} from "react-native";
 
 export default class Header extends React.Component{
     toCreate = ()=>{
@@ -22,25 +22,25 @@ export default class Header extends React.Component{
 
 const HeaderStyle = StyleSheet.create({
     container: {
-        height: 65,
-        borderWidth: 2,
+        position: "absolute",
+        left: Dimensions.get("screen").width * .7,
+        bottom: 0,
+        width: 75,
+        height: 40,
         borderColor: "lightgrey",
-        flexDirection: "row",
-        justifyContent: "flex-end",
-        marginTop: 100,
+        marginTop: 0,
         marginBottom: 50,
-        backgroundColor: "white"
+        zIndex: 2
     },
     button: {
-        position: "relative",
-        right: 20,
         width: 75,
         height: 40,
         borderWidth: 2,
         borderColor: "purple",
         borderRadius: 4,
         alignSelf: "center",
-        justifyContent: "center"
+        justifyContent: "center",
+        backgroundColor: "white"
     },
     text: {
         color: "purple",

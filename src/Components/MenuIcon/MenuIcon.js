@@ -13,12 +13,12 @@ export default class MenuIcon extends React.Component{
                     flexDirection: "column",
                     width: 25,
                     height: 20,
-                    marginHorizontal: 20
+                    marginHorizontal: 30
             }}>
 
                     <Text
                         style={{
-                            width: 25,
+                            width: 23,
                             height: 4,
                             backgroundColor: "purple",
                         }}
@@ -26,7 +26,7 @@ export default class MenuIcon extends React.Component{
 
                     <Text
                         style={{
-                            width: 25,
+                            width: 23,
                             height: 4,
                             marginVertical: 4,
                             backgroundColor: "purple",
@@ -35,7 +35,7 @@ export default class MenuIcon extends React.Component{
                     
                     <Text
                         style={{
-                            width: 25,
+                            width: 23,
                             height: 4,
                             marginTop: 0,
                             backgroundColor: "purple",

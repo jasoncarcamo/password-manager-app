@@ -99,7 +99,7 @@ export default class Login extends React.Component{
                 style={LoginStyle.container}>
 
                 <Text
-                    style={LoginStyle.headerText}>Log in to your account</Text>
+                    style={LoginStyle.headerText}>Password Manager</Text>
                 
                 <TextInput
                     style={LoginStyle.textInput}
@@ -132,25 +132,37 @@ export default class Login extends React.Component{
 const LoginStyle = StyleSheet.create({
     container: {
         height: Dimensions.get("screen").height,
-        backgroundColor: "white",
+        backgroundColor: "rgb(130, 100, 166)",
         paddingBottom: 95
     },
     headerText: {
-        fontSize: 20,
+        fontSize: 25,
         marginTop: Dimensions.get("screen").height / 5,
         marginBottom: 55,
-        textAlign: "center"
+        textAlign: "center",
+        color: "white",
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 2,
+            height: 4
+        },
+        shadowOpacity: .9,
+        shadowRadius: 3,
+        elevation: 2
     },
     textInput: {
         marginVertical: 7,
-        width: 250,
-        height: 40,
+        width: Dimensions.get("window").width * .9,
+        height: 45,
         fontSize: 16,
-        borderColor: "lightgrey",
+        backgroundColor: "rgb(172, 154, 196)",
+        color: "white",
+        borderColor: "rgb(119, 91, 156)",
         borderWidth: 1,
-        borderRadius: 4,
+        borderRadius: 10,
         alignSelf: "center",
-        paddingLeft: 10 
+        paddingHorizontal: 30,
+        paddingLeft: 25,
     },
     inputError: {
         width: 250,
@@ -167,13 +179,15 @@ const LoginStyle = StyleSheet.create({
     },
     loading: {
         fontSize: 16,
-        textAlign: "center"
+        textAlign: "center",
+        color: "white"
     },
     button: {
-        width: 75,
-        height: 40,
-        backgroundColor: "purple",
-        borderRadius: 4,
+        marginTop: 50,
+        width: Dimensions.get("screen").width * .9,
+        height: 45,
+        backgroundColor: "rgb(24, 188, 213)",
+        borderRadius: 10,
         justifyContent: "center",
         alignSelf: "center"
     },

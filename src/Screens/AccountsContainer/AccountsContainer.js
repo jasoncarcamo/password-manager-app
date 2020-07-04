@@ -10,13 +10,15 @@ const Stack = createStackNavigator()
 export default class AccountsContainer extends React.Component{
     render(){
         return (
-            <Stack.Navigator
-                screenOptions={{
-                    headerRight: () => <MenuIcon navigation={this.props.navigation}/> 
-                }}>
+            <Stack.Navigator>
                 <Stack.Screen
                     name="All Accounts"
-                    component={Accounts}></Stack.Screen>
+                    component={Accounts}
+                    options={{
+                        headerLeft: () => <MenuIcon navigation={this.props.navigation}/>,
+                        headerTitle: "All",
+                        headerTitleAlign: "center"
+                    }}></Stack.Screen>
 
             <Stack.Screen
                 name="Edit Account"

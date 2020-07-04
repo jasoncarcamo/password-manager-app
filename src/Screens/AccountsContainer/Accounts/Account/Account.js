@@ -17,7 +17,7 @@ export default class Account extends React.Component{
     };
 
     render(){
-
+        console.log(this.props)
         return (
             <View
                 style={AccountStyle.container}>
@@ -25,18 +25,20 @@ export default class Account extends React.Component{
                     onTouchEnd={this.toggleInfo}
                     style={AccountStyle.header}>
                     <Image
-                        style={{
-                            width: 50,
-                            height: 50,
-                            borderRadius: 100
-                        }}
+                        style={AccountStyle.img}
 
                         source={{
                             uri: `https://logo.clearbit.com/${this.props.account.url}`
                         }}/>
 
-                    <Text
-                        style={AccountStyle.headerText}>{this.props.account.email_used}</Text>
+                    <View
+                        style={AccountStyle.info}>
+                        <Text
+                            style={AccountStyle.headerText}>{this.props.account.url}</Text>
+                        
+                        <Text
+                            style={AccountStyle.headerUrl}>{this.props.account.email_used}</Text>
+                    </View>
                 </View>
 
                 {this.state.showInfo ? <AccountInfo account={this.props.account} navigation={this.props.navigation}/> : <View></View>}
@@ -47,19 +49,31 @@ export default class Account extends React.Component{
 
 const AccountStyle = StyleSheet.create({
     container: {
-        marginBottom: 50
+        marginVertical: 25
     },
     header: {
+        height: 80,
         flexDirection: "row",
-        paddingVertical: 10,
+        paddingVertical: 0,
         paddingLeft: 25,
-        borderWidth: 1,
-        backgroundColor: "white"
+        backgroundColor: "rgb(221,208,235)"
+    },
+    info: {
+        justifyContent: "center"
+    },
+    img: {
+        width: 55,
+        height: 55,
+        alignSelf: "center",
+        borderRadius: 4
     },
     headerText: {
         marginLeft: 15,
-        textAlign: "center",
-        alignSelf: "center",
         fontSize: 18
+    },
+    headerUrl: {
+        marginLeft: 15,
+        fontSize: 12,
+        color: "gray"
     }
 })

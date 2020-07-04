@@ -1,5 +1,5 @@
 import React from "react";
-import {ScrollView, View, Text, Button, TextInput, StyleSheet} from "react-native";
+import {ScrollView, View, Text, Button, TextInput, StyleSheet, Dimensions} from "react-native";
 import AppContext from "../../Services/Contexts/AppContext/AppContext";
 import TokenService from "../../Services/TokenService/TokenService";
 import { TouchableOpacity } from "react-native-gesture-handler";
@@ -275,8 +275,8 @@ const CreateStyle = StyleSheet.create({
         position: "absolute",
         top: 0,
         left: 0,
-        width: window.innerWidth,
-        height: window.innerHeight,
+        width: Dimensions.get("screen").width,
+        height: Dimensions.get("screen").width,
         backgroundColor: "white",
         zIndex: 2
     },
@@ -284,8 +284,9 @@ const CreateStyle = StyleSheet.create({
         textAlign: "center",
         paddingHorizontal: 20,
         fontSize: 16,
-        marginTop: window.innerHeight / 2.5,
-        marginBottom: 10
+        marginTop: Dimensions.get("screen").height / 2.5,
+        marginBottom: 10,
+        backgroundColor: "white"
     },
     button: {
         width: 75,

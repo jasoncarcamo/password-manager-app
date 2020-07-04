@@ -1,5 +1,5 @@
 import React from "react";
-import {ScrollView, View, Button, Text} from "react-native";
+import {ScrollView, View, Button, Text, StyleSheet, Dimensions} from "react-native";
 import {createStackNavigator} from "@react-navigation/stack";
 import AppContext from "../../../Services/Contexts/AppContext/AppContext";
 
@@ -28,12 +28,27 @@ export default class Accounts extends React.Component{
 
     render(){
         return (
-            <ScrollView>
+            <View
+                style={AccountContainer.container}>
+                <ScrollView>
+                    
+                    {this.context.accountsLoading ? <Text>Loading...</Text> : this.renderAccounts()}
+
+                    
+                </ScrollView>
+
                 <Header navigation={this.props.navigation}/>
-
-                {this.context.accountsLoading ? <Text>Loading...</Text> : this.renderAccounts()}
-
-            </ScrollView>
+            </View>
         )
     }
-}
+};
+
+const AccountContainer = StyleSheet.create({
+    container: {
+        marginBottom: 0,
+        backgroundColor: "rgb(107, 81, 145)"
+    },
+    view: {
+        borderWidth: 1
+    }
+})

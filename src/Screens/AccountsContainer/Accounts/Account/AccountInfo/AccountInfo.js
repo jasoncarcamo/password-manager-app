@@ -204,7 +204,7 @@ export default class AccountInfo extends React.Component{
 
 const InfoStyle = StyleSheet.create({
     container: {
-        backgroundColor: "#F0F9FF",
+        backgroundColor: "rgb(221,208,235)",
         paddingBottom: 20
     },
     text: {
