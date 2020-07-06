@@ -36,14 +36,14 @@ const HeaderStyle = StyleSheet.create({
         width: 75,
         height: 40,
         borderWidth: 2,
-        borderColor: "purple",
+        borderColor: "rgb(107, 81, 145)",
         borderRadius: 4,
         alignSelf: "center",
         justifyContent: "center",
         backgroundColor: "white"
     },
     text: {
-        color: "purple",
+        color: "rgb(107, 81, 145)",
         textAlign: "center"
     }
 })

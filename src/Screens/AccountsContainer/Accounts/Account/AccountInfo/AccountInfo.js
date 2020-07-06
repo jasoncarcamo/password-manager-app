@@ -220,7 +220,7 @@ const InfoStyle = StyleSheet.create({
     button: {
         width: 75,
         height: 40,
-        backgroundColor: "purple",
+        backgroundColor: "rgb(107, 81, 145)",
         borderRadius: 4,
         justifyContent: "center",
         alignSelf: "center",

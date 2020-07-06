@@ -30,14 +30,16 @@ export default class Accounts extends React.Component{
         return (
             <View
                 style={AccountContainer.container}>
-                <ScrollView>
+                <ScrollView
+                    style={AccountContainer.container}>
                     
-                    {this.context.accountsLoading ? <Text>Loading...</Text> : this.renderAccounts()}
+                    {this.context.accountsLoading ? <Text style={AccountContainer.loading}>Loading...</Text> : this.renderAccounts()}
 
                     
                 </ScrollView>
 
-                <Header navigation={this.props.navigation}/>
+                {this.context.accountsLoading ? <View></View> : <Header navigation={this.props.navigation}/>}
+            
             </View>
         )
     }
@@ -46,9 +48,15 @@ export default class Accounts extends React.Component{
 const AccountContainer = StyleSheet.create({
     container: {
         marginBottom: 0,
-        backgroundColor: "rgb(107, 81, 145)"
+        backgroundColor: "rgb(107, 81, 145)",
     },
     view: {
         borderWidth: 1
+    },
+    loading: {
+        paddingTop: 20,
+        fontSize: 16,
+        backgroundColor: "white",
+        height: Dimensions.get("screen").height
     }
 })

@@ -50,7 +50,7 @@ const SignOutStyle = StyleSheet.create({
         width: 175,
         height: 45,
         padding: 0,
-        backgroundColor: "purple"
+        backgroundColor: "rgb(107, 81, 145)"
     },
     text: {
         margin: 0,

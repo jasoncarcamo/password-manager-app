@@ -20,7 +20,7 @@ export default class MenuIcon extends React.Component{
                         style={{
                             width: 23,
                             height: 4,
-                            backgroundColor: "purple",
+                            backgroundColor: "rgb(107, 81, 145)",
                         }}
                         ></Text>
 
@@ -29,7 +29,7 @@ export default class MenuIcon extends React.Component{
                             width: 23,
                             height: 4,
                             marginVertical: 4,
-                            backgroundColor: "purple",
+                            backgroundColor: "rgb(107, 81, 145)",
                         }}
                         ></Text>
                     
@@ -38,7 +38,7 @@ export default class MenuIcon extends React.Component{
                             width: 23,
                             height: 4,
                             marginTop: 0,
-                            backgroundColor: "purple",
+                            backgroundColor: "rgb(107, 81, 145)",
                         }}
                         ></Text>
             </TouchableOpacity>

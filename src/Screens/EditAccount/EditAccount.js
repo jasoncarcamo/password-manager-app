@@ -267,14 +267,14 @@ const EditStyle = StyleSheet.create({
         width: 75,
         height: 40,
         borderWidth: 2,
-        borderColor: "purple",
+        borderColor: "rgb(107, 81, 145)",
         borderRadius: 4,
         alignSelf: "flex-end",
         justifyContent: "center"
     },
     cancelText: {
         textAlign: "center",
-        color: 'purple'
+        color: 'rgb(107, 81, 145)'
     },
     loading: {
         fontSize: 16,
@@ -299,7 +299,7 @@ const EditStyle = StyleSheet.create({
     button: {
         width: 75,
         height: 40,
-        backgroundColor: "purple",
+        backgroundColor: "rgb(107, 81, 145)",
         borderRadius: 4,
         justifyContent: "center",
         alignSelf: "center"

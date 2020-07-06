@@ -17,7 +17,7 @@ export default class AccountsContainer extends React.Component{
                     options={{
                         headerLeft: () => <MenuIcon navigation={this.props.navigation}/>,
                         headerTitle: "All",
-                        headerTitleAlign: "center"
+                        headerTitleAlign: "center",
                     }}></Stack.Screen>
 
             <Stack.Screen

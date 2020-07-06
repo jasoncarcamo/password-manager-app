@@ -182,14 +182,7 @@ export default class CreateAccount extends React.Component{
                 style={CreateStyle.scrollContainer}>
 
                 {this.state.success ? this.renderConfirmBox() : <Text></Text>}
-
-                <TouchableOpacity
-                    style={CreateStyle.cancelButton}
-                    onPress={this.toAccounts}>
-                    <Text
-                        style={CreateStyle.cancelText}>Cancel</Text>
-                </TouchableOpacity>
-
+                
                 <View
                     style={CreateStyle.container}>
                     <TextInput
@@ -207,7 +200,7 @@ export default class CreateAccount extends React.Component{
                     {this.state.emailError ? <Text style={CreateStyle.inputError}>{this.state.emailError}</Text> : <View></View>}
                     
                     <TextInput
-                        placeholder="Username if applicable"
+                        placeholder="Username ( If applicable)"
                         style={CreateStyle.textInput}
                         onChangeText={this.handleUserName}
                         value={this.state.user_name}></TextInput>
@@ -234,18 +227,19 @@ export default class CreateAccount extends React.Component{
 
 const CreateStyle = StyleSheet.create({
     scrollContainer: {
-        backgroundColor: "white"
+        backgroundColor: "rgb(107, 81, 145)"
     },
     container: {
-        marginVertical: 85
+        paddingTop: 25
     },
     textInput: {
-        marginVertical: 7,
+        marginTop: 15,
         width: 250,
         height: 40,
         fontSize: 16,
+        color: "white",
         borderColor: "lightgrey",
-        borderWidth: 1,
+        borderBottomWidth: 1,
         borderRadius: 4,
         alignSelf: "center",
         paddingLeft: 10
@@ -262,14 +256,14 @@ const CreateStyle = StyleSheet.create({
         width: 75,
         height: 40,
         borderWidth: 2,
-        borderColor: "purple",
+        borderColor: "rgb(107, 81, 145)",
         borderRadius: 4,
         alignSelf: "flex-end",
         justifyContent: "center"
     },
     cancelText: {
         textAlign: "center",
-        color: 'purple'
+        color: 'rgb(107, 81, 145)'
     },
     successContainer: {
         position: "absolute",
@@ -291,13 +285,14 @@ const CreateStyle = StyleSheet.create({
     button: {
         width: 75,
         height: 40,
-        backgroundColor: "purple",
+        backgroundColor: "white",
         borderRadius: 4,
         justifyContent: "center",
-        alignSelf: "center"
+        alignSelf: "center",
+        marginTop: 15
     },
     buttonText: {
-        color: "white",
+        color: "rgb(107, 81, 145)",
         textAlign: "center",
         fontSize: 17
     }
