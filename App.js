@@ -15,8 +15,9 @@ export default class App extends React.Component{
                 <Stack.Navigator>
                     <Stack.Screen
                         name="App"
-                        component={<AppContainer/>}
+                        component={AppContainer}
                         options={{
+                            headerShown: false
                         }}></Stack.Screen>
                 </Stack.Navigator>
             </NavigationContainer>

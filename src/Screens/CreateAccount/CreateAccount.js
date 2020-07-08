@@ -18,6 +18,7 @@ export default class CreateAccount extends React.Component{
             passwordError: "",
             success: false,
             creating: false,
+            scroll: true,
             error: ""
         }
     };
@@ -127,6 +128,10 @@ export default class CreateAccount extends React.Component{
                             })
                             .then( resData => {
 
+                                this.setState({
+                                    scroll: false
+                                });
+
                                 this.addAccounts(resData.account);
 
                             })
@@ -156,6 +161,7 @@ export default class CreateAccount extends React.Component{
     };
     
     renderConfirmBox = ()=>{
+
         return (
             <View
                 style={CreateStyle.successContainer}>
@@ -164,9 +170,9 @@ export default class CreateAccount extends React.Component{
                     style={CreateStyle.successText}>You have successfully added a new account to your list</Text>
 
                 <TouchableOpacity
-                    style={CreateStyle.button}
+                    style={CreateStyle.okButton}
                     onPress={this.toAccounts}>
-                        <Text style={CreateStyle.buttonText}>Ok</Text>    
+                        <Text style={CreateStyle.okText}>Ok</Text>    
                 </TouchableOpacity>
             </View>
         )
@@ -179,10 +185,11 @@ export default class CreateAccount extends React.Component{
     render(){
         return(
             <ScrollView
-                style={CreateStyle.scrollContainer}>
+                style={CreateStyle.scrollContainer}
+                scrollEnabled={this.state.scroll}>
 
                 {this.state.success ? this.renderConfirmBox() : <Text></Text>}
-                
+
                 <View
                     style={CreateStyle.container}>
                     <TextInput
@@ -214,11 +221,11 @@ export default class CreateAccount extends React.Component{
                         value={this.state.password}></TextInput>
                     {this.state.passwordError ? <Text style={CreateStyle.inputError}>{this.state.passwordError}</Text> : <View></View>}
 
-                    {this.state.creating ? <Text>Loading...</Text> : <TouchableOpacity
+                    {this.state.creating ? <Text style={CreateStyle.loading}>Loading...</Text> : <TouchableOpacity
                     style={CreateStyle.button}
                     onPress={this.handleSubmit}>
                         <Text style={CreateStyle.buttonText}>Save</Text>    
-                </TouchableOpacity>}
+                    </TouchableOpacity>}
                 </View>
             </ScrollView>
         )
@@ -234,7 +241,7 @@ const CreateStyle = StyleSheet.create({
     },
     textInput: {
         marginTop: 15,
-        width: 250,
+        width: Dimensions.get("screen").width * .8,
         height: 40,
         fontSize: 16,
         color: "white",
@@ -245,8 +252,8 @@ const CreateStyle = StyleSheet.create({
         paddingLeft: 10
     },
     inputError: {
-        width: 250,
-        color: "red",
+        width: Dimensions.get("screen").width * .8,
+        color: "white",
         marginBottom: 7,
         alignSelf: "center"
     },
@@ -265,12 +272,16 @@ const CreateStyle = StyleSheet.create({
         textAlign: "center",
         color: 'rgb(107, 81, 145)'
     },
+    loading: {
+        fontSize: 16,
+        color: "white"
+    },
     successContainer: {
-        position: "absolute",
+        position: "relative",
         top: 0,
         left: 0,
         width: Dimensions.get("screen").width,
-        height: Dimensions.get("screen").width,
+        height: Dimensions.get("screen").height,
         backgroundColor: "white",
         zIndex: 2
     },
@@ -295,5 +306,19 @@ const CreateStyle = StyleSheet.create({
         color: "rgb(107, 81, 145)",
         textAlign: "center",
         fontSize: 17
+    },
+    okButton: {
+        width: 75,
+        height: 40,
+        borderWidth: 2,
+        borderColor: "rgb(107, 81, 145)",
+        borderRadius: 4,
+        alignSelf: "center",
+        justifyContent: "center",
+        backgroundColor: "white"
+    },
+    okText: {
+        color: "rgb(107, 81, 145)",
+        textAlign: "center"
     }
 })

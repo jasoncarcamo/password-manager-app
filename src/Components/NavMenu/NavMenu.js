@@ -34,7 +34,7 @@ export default class NavMenu extends React.Component{
                     name="Create account"
                     component={CreateAccount}
                     options={{
-                        headerRight: () => <CancelButton navigation={navigation}/>
+                        headerRight: () => <CancelButton navigation={this.props.navigation}/>
                     }}></Stack.Screen>
             </Stack.Navigator>
         )
