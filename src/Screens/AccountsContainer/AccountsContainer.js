@@ -1,6 +1,7 @@
 import React from "react";
 import {createStackNavigator} from "@react-navigation/stack";
 
+import CancelButton from "../CreateAccount/CancelButton/CancelButton";
 import MenuIcon from "../../Components/MenuIcon/MenuIcon";
 import Accounts from "./Accounts/Accounts";
 import EditAccount from "../EditAccount/EditAccount";
@@ -22,7 +23,11 @@ export default class AccountsContainer extends React.Component{
 
             <Stack.Screen
                 name="Edit Account"
-                component={EditAccount}></Stack.Screen>
+                component={EditAccount}
+                options={{
+                    headerTitleAlign: "center",
+                    headerRight: ()=> <CancelButton navigation={this.props.navigation}/>
+                }}></Stack.Screen>
                 
             </Stack.Navigator>
         )

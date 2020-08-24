@@ -1,5 +1,5 @@
 import React  from "react";
-import {View, ScrollView, Text, TouchableOpacity, StyleSheet, TextInput, Button} from "react-native";
+import {View, ScrollView, Text, TouchableOpacity, StyleSheet, TextInput, Button, Dimensions} from "react-native";
 import TokenService from "../../Services/TokenService/TokenService";
 import AppContext from "../../Services/Contexts/AppContext/AppContext";
 
@@ -17,6 +17,7 @@ export default class EditAccount extends React.Component{
             passwordError: "",
             success: false,
             editing: false,
+            scroll: true,
             error: ""
         }
     }
@@ -135,6 +136,10 @@ export default class EditAccount extends React.Component{
                                 return res.json();
                             })
                             .then( resData => {
+                                this.setState({
+                                    scroll: false
+                                });
+
                                 this.refreshAccounts(resData.account);
                             })
                             .catch( err => {
@@ -187,22 +192,17 @@ export default class EditAccount extends React.Component{
 
     render(){
         return (
-            <ScrollView>
+            <ScrollView
+                style={EditStyle.scrollView}
+                scrollEnabled={this.state.scroll}>
 
                 {this.state.success ? this.renderConfirmBox() : <Text></Text>}
-
-                <TouchableOpacity
-                    style={EditStyle.cancelButton}
-                    onPress={this.toAccounts}>
-                    <Text
-                        style={EditStyle.cancelText}>Cancel</Text>
-                </TouchableOpacity>
 
                 <View
                     style={EditStyle.container}>
                     <TextInput
                         style={EditStyle.textInput}
-                        placeholder="Main url"
+                        placeholder="Website url"
                         onChangeText={this.handleUrl}
                         value={this.state.url}></TextInput>
                     {this.state.urlError ? <Text style={EditStyle.inputError}>{this.state.urlError}</Text> : <Text></Text>}
@@ -215,7 +215,7 @@ export default class EditAccount extends React.Component{
                     {this.state.emailError ? <Text style={EditStyle.inputError}>{this.state.emailError}</Text> : <View></View>}
                     
                     <TextInput
-                        placeholder="Username if applicable"
+                        placeholder="Username (if applicable)"
                         style={EditStyle.textInput}
                         onChangeText={this.handleUserName}
                         value={this.state.user_name}></TextInput>
@@ -241,6 +241,9 @@ export default class EditAccount extends React.Component{
 };
 
 const EditStyle = StyleSheet.create({
+    scrollView:{
+        backgroundColor: "rgb(107, 81, 145)"
+    },
     container: {
         marginVertical: 85
     },
@@ -249,8 +252,9 @@ const EditStyle = StyleSheet.create({
         width: 250,
         height: 40,
         fontSize: 16,
-        borderColor: "lightgrey",
-        borderWidth: 1,
+        color: "white",
+        borderBottomColor: "lightgrey",
+        borderBottomWidth: 1,
         borderRadius: 4,
         alignSelf: "center",
         paddingLeft: 10
@@ -278,14 +282,15 @@ const EditStyle = StyleSheet.create({
     },
     loading: {
         fontSize: 16,
-        textAlign: "center"
+        textAlign: "center",
+        color: "white"
     },
     successContainer: {
-        position: "absolute",
+        position: "relative",
         top: 0,
         left: 0,
-        width: window.innerWidth,
-        height: window.innerHeight,
+        width: Dimensions.get("screen").width,
+        height: Dimensions.get("screen").height,
         backgroundColor: "white",
         zIndex: 2
     },
@@ -293,20 +298,23 @@ const EditStyle = StyleSheet.create({
         textAlign: "center",
         paddingHorizontal: 20,
         fontSize: 16,
-        marginTop: window.innerHeight / 2.5,
+        marginTop: Dimensions.get("screen").height * .35,
         marginBottom: 10
     },
     button: {
         width: 75,
         height: 40,
-        backgroundColor: "rgb(107, 81, 145)",
+        backgroundColor: "white",
         borderRadius: 4,
+        borderWidth: 1,
+        borderColor: "rgb(107, 81, 145)",
         justifyContent: "center",
-        alignSelf: "center"
+        alignSelf: "center",
+        marginTop: 25
     },
     buttonText: {
-        color: "white",
+        color: "rgb(107, 81, 145)",
         textAlign: "center",
-        fontSize: 17
+        fontSize: 16
     }
 });

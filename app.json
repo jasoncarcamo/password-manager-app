@@ -23,10 +23,12 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.password.manager",
+      "buildNumber": "1.0.0"
     },
     "android": {
-        "package": "com.PasswordManager",
+        "package": "com.password.manager",
         "versionCode": 1
     },
     "web": {

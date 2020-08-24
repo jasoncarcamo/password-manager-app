@@ -11,9 +11,7 @@ export default class Account extends React.Component{
     };
 
     toggleInfo = ()=>{
-        this.setState({
-            showInfo: !this.state.showInfo
-        });
+        this.props.navigation.navigate("Edit Account", { account: this.props.account})
     };
 
     render(){
